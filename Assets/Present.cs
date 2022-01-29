@@ -7,8 +7,6 @@ public class Present : MonoBehaviour
     private bool isPlayerEntered1;
     private bool isPlayerEntered2;
 
-    public UnityEvent onWinEvent = new UnityEvent();
-
     void Start(){
     }
 
@@ -19,8 +17,7 @@ public class Present : MonoBehaviour
 	    isPlayerEntered2 = true;
 
 	if(isPlayerEntered1 && isPlayerEntered2) {
-            Debug.Log("...");
-            onWinEvent?.Invoke();
+            GameManager.Instance.OnWin();
         }
 
     }

@@ -13,20 +13,16 @@ public class PlayerController : MonoBehaviour
     private Vector2 _input;
     private Vector2 _newVel;
 
-    public Rigidbody2D body1;
-    public Rigidbody2D body2;
-
-    private Rigidbody2D _body;
-    private Rigidbody2D _antiBody;
+    public Rigidbody2D body;
+    public Rigidbody2D antiBody;
+    public Animator animator;
+    public Animator antiAnimator;
 
     void Start()
     {
         _input = new Vector2(0, 0);
         _newVel = new Vector2(0, 0);
         isJumping = false;
-
-        _body = body1;
-        _antiBody = body2;
     }
 
     // Update is called once per frame
@@ -45,19 +41,38 @@ public class PlayerController : MonoBehaviour
         }
 
 	if(Input.GetKeyDown("q")){
-	    if(_body == body1) {
-		_body = body2;
-                _antiBody = body1;
-            }
-	    else {
-		_body = body1;
-                _antiBody = body2;
-            }
-	    
+	    Animator tmpAnimator;
+	    tmpAnimator = animator;
+	    animator = antiAnimator;
+	    antiAnimator = tmpAnimator;
+
+            Rigidbody2D tmpBody;
+            tmpBody = body;
+            body = antiBody;
+            antiBody = tmpBody;	    
         }
 
-        _body.velocity = _newVel;
-        _antiBody.velocity = new Vector2(-_newVel.x, -_newVel.y);
+
+
+
+        if(_newVel.x > 0) {
+            animator.SetInteger("Direction", 2);
+            antiAnimator.SetInteger("Direction", 3);
+        } else if(_newVel.x < 0){
+            animator.SetInteger("Direction", 3);
+            antiAnimator.SetInteger("Direction", 2);
+	}
+
+	if(_newVel.y > 0){
+            animator.SetInteger("Direction", 1);
+            antiAnimator.SetInteger("Direction", 0);	    
+	} else if(_newVel.y < 0){
+            animator.SetInteger("Direction", 0);
+            antiAnimator.SetInteger("Direction", 1);	    	    
+	}
+
+        body.velocity = _newVel;
+        antiBody.velocity = new Vector2(-_newVel.x, -_newVel.y);
     }
 
     // void OnCollisionEnter(){

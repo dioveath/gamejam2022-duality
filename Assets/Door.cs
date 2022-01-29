@@ -2,24 +2,23 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
-    // Start is called before the first frame update
+
+    // private BoxCollider2D collider;
+
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        // collider = GetComponent<BoxCollider2D>();
+        gameObject.SetActive(false);
     }
 
     public void ActivateDoor(){
-	
+        // collider.isTrigger = false;
+        gameObject.SetActive(true);
     }
 
     public void DeactivateDoor(){
-	
+        // collider.isTrigger = true;
+	gameObject.SetActive(false);
     }
 
 }
