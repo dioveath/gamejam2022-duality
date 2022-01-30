@@ -3,7 +3,6 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-
     public int totalLevels;
 
     private static GameManager _instance;
@@ -25,6 +24,10 @@ public class GameManager : MonoBehaviour
 
         _instance = this;
         DontDestroyOnLoad(this);
+
+        AudioManager.Instance().SetSound(true);
+        AudioManager.Instance().PlayMusic("puzzle_loop");
+        // AudioManager.Instance
     }
 
     void Update(){
@@ -35,7 +38,6 @@ public class GameManager : MonoBehaviour
     }
 
     public void OnWin(){
-        Debug.Log("You Win");
         SceneManager.LoadScene((++currentLevelIndex % totalLevels), LoadSceneMode.Single);
     }
 

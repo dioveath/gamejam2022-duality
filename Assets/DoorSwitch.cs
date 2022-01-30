@@ -1,3 +1,4 @@
+using DG.Tweening;
 using UnityEngine;
 
 public class DoorSwitch : MonoBehaviour
@@ -9,15 +10,21 @@ public class DoorSwitch : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collider){
         Debug.Log("Entered");
         if(collider.tag == "Player" || collider.tag == "Player2") {
-            door.ActivateDoor();
-          }
+            transform.DOScale(new Vector3(1.05f, 0.96f, 1f), 0.1f).SetEase(Ease.InOutQuad).OnComplete(() =>
+            {
+                door.ActivateDoor();
+            });
+        }
     }
 
     void OnTriggerExit2D(Collider2D collider){
         Debug.Log("OnExit");
         if(collider.tag == "Player" || collider.tag == "Player2") {
-	    if(switchType == SwitchType.Yoyo)
-		door.DeactivateDoor();
+            transform.DOScale(Vector3.one, 0.2f).SetEase(Ease.InOutQuad).OnComplete(() =>
+            {
+		if(switchType == SwitchType.Yoyo)
+		    door.DeactivateDoor();		
+            });
         }
     }
 
