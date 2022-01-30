@@ -13,16 +13,25 @@ public class PlayerController : MonoBehaviour
     private Vector2 _input;
     private Vector2 _newVel;
 
+    public bool isCharacterOneSelected = true;
+    public CozzleCharacter cozzleCharacter1;
+    public CozzleCharacter cozzleCharacter2;
+
     public Rigidbody2D body;
     public Rigidbody2D antiBody;
     public Animator animator;
     public Animator antiAnimator;
+
+    // public CozzleCharacter 
 
     void Start()
     {
         _input = new Vector2(0, 0);
         _newVel = new Vector2(0, 0);
         isJumping = false;
+
+	cozzleCharacter1.SetControl(isCharacterOneSelected);
+	cozzleCharacter2.SetControl(!isCharacterOneSelected);	
     }
 
     // Update is called once per frame
@@ -49,11 +58,12 @@ public class PlayerController : MonoBehaviour
             Rigidbody2D tmpBody;
             tmpBody = body;
             body = antiBody;
-            antiBody = tmpBody;	    
+            antiBody = tmpBody;
+
+            isCharacterOneSelected = !isCharacterOneSelected;
+            cozzleCharacter1.SetControl(isCharacterOneSelected);
+            cozzleCharacter2.SetControl(!isCharacterOneSelected);
         }
-
-
-
 
         if(_newVel.x > 0) {
             animator.SetInteger("Direction", 2);
