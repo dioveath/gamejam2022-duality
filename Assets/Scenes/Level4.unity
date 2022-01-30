@@ -143,7 +143,7 @@ PrefabInstance:
     - target: {fileID: 4915978533727153716, guid: deb04ab2d927f7842ad72024f59abda9,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4915978533727153716, guid: deb04ab2d927f7842ad72024f59abda9,
         type: 3}
@@ -2690,10 +2690,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4206697037232162994, guid: 28eedeb6f920335408e982808ba5122b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4206697037232162995, guid: 28eedeb6f920335408e982808ba5122b,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4206697037232162995, guid: 28eedeb6f920335408e982808ba5122b,
         type: 3}
@@ -2792,7 +2797,7 @@ Transform:
   - {fileID: 331896705}
   - {fileID: 327169833}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &906902371
 PrefabInstance:
@@ -2809,7 +2814,7 @@ PrefabInstance:
     - target: {fileID: 39593780459587197, guid: 0f5b639ff782c074cbfe3f71494a900d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 39593780459587197, guid: 0f5b639ff782c074cbfe3f71494a900d,
         type: 3}

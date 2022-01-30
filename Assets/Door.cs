@@ -1,9 +1,12 @@
+using DG.Tweening;
 using UnityEngine;
 
 public class Door : MonoBehaviour
 {
 
     // private BoxCollider2D collider;
+    private bool _isLoading = false;
+    private bool _isActive = false;
 
     void Start()
     {
@@ -12,13 +15,29 @@ public class Door : MonoBehaviour
     }
 
     public void ActivateDoor(){
-        // collider.isTrigger = false;
+	if(_isLoading || _isActive) return;
+
+        _isLoading = true;
+
         gameObject.SetActive(true);
+        transform.localScale = Vector3.zero;
+        transform.DOScale(new Vector3(1, 1, 1), 1f).SetEase(Ease.InOutBounce).OnComplete(() => {
+            _isLoading = false;
+            _isActive = true;
+        });
     }
 
     public void DeactivateDoor(){
-        // collider.isTrigger = true;
-	gameObject.SetActive(false);
+	if(_isLoading || !_isActive) return;
+
+        _isLoading = true;
+
+        transform.DOScale(Vector3.zero, 1f).SetEase(Ease.InOutBounce).OnComplete(() =>
+        {
+            _isLoading = false;
+            _isActive = false;
+	    gameObject.SetActive(false);
+        });
     }
 
 }

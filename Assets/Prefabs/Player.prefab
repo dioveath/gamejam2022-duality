@@ -181,7 +181,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4206697037232162995
 Transform:
   m_ObjectHideFlags: 0
@@ -223,7 +223,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 4206697037232163005}
-  speed: 600
+  speed: 400
   jumpHeight: 8
   isCharacterOneSelected: 1
   cozzleCharacter1: {fileID: 4206697037066870202}
