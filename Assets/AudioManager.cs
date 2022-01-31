@@ -23,6 +23,7 @@ public class AudioManager : MonoBehaviour
     }    
 
     void Start(){
+        _on = true;
         _sfxSource = GetComponent<AudioSource>();
         DontDestroyOnLoad(this.gameObject);
     }

@@ -19,7 +19,7 @@ public class PositionRendererSorter : MonoBehaviour
     }
 
     void LateUpdate(){
-        _renderer.sortingOrder = (int)(_sortingOrderBase - transform.position.y - offset);
+        _renderer.sortingOrder = Mathf.CeilToInt(_sortingOrderBase - transform.position.y - offset);
         sortingOrder = _renderer.sortingOrder;
         if(runOnlyOnce) Destroy(this);
     }
