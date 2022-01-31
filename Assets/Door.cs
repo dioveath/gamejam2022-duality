@@ -24,6 +24,7 @@ public class Door : MonoBehaviour
         transform.DOScale(new Vector3(1, 1, 1), 1f).SetEase(Ease.InOutBounce).OnComplete(() => {
             _isLoading = false;
             _isActive = true;
+            AudioManager.Instance().PlayAudio("box_spawn", 0.5f);
         });
     }
 

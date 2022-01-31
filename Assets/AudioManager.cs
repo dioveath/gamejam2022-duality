@@ -47,10 +47,11 @@ public class AudioManager : MonoBehaviour
 	return _on;
     }
 
-    public void PlayAudio(string name){
+    public void PlayAudio(string name, float volume = 1.0f){
         if(!_on) return;
         Sound sound = allSounds.Find(e => e.name == name);
 	if(sound != null){
+            _sfxSource.volume = volume;
             _sfxSource.clip = sound.audioClip;
             _sfxSource.Play();
         } else {

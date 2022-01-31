@@ -10267,7 +10267,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sortingOrderBase: 5000
-  offset: 2
+  offset: 1
   runOnlyOnce: 0
   sortingOrder: 0
 --- !u!1 &4206697037834010565
@@ -10495,6 +10495,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sortingOrderBase: 5000
-  offset: 2
+  offset: 1
   runOnlyOnce: 0
   sortingOrder: 0

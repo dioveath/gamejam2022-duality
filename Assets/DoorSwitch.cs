@@ -12,6 +12,7 @@ public class DoorSwitch : MonoBehaviour
         if(collider.tag == "Player" || collider.tag == "Player2") {
             transform.DOScale(new Vector3(1.05f, 0.96f, 1f), 0.1f).SetEase(Ease.InOutQuad).OnComplete(() =>
             {
+                AudioManager.Instance().PlayAudio("switch_open");
                 door.ActivateDoor();
             });
         }
