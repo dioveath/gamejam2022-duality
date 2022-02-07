@@ -4,7 +4,7 @@ public class PositionRendererSorter : MonoBehaviour
 {
 
     [SerializeField]
-    private int _sortingOrderBase = 5000;
+    private int _sortingOrderBase = 50000;
     [SerializeField]
     private int offset = 0;
     [SerializeField]
@@ -19,7 +19,7 @@ public class PositionRendererSorter : MonoBehaviour
     }
 
     void LateUpdate(){
-        _renderer.sortingOrder = Mathf.CeilToInt(_sortingOrderBase - transform.position.y - offset);
+        _renderer.sortingOrder = _sortingOrderBase - (int) (transform.position.y * 10) - offset;
         sortingOrder = _renderer.sortingOrder;
         if(runOnlyOnce) Destroy(this);
     }

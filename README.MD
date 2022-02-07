@@ -4,8 +4,15 @@ Duality Themed Puzzle
 Two characters are bounded to one control but in reverse. Our main task is to move them to a teleportation 
 pod at the same time. We will face interesting puzzles on the way.
 
-![Cozzle Main Menu](Images/demo_1.png)
+<p align="center">
+	<img src="Images/demo_1.png" alt="Cozzle Main Menu" width="700"/>
+</p>
+<!-- ![Cozzle Main Menu](Images/demo_1.png) -->
 
+## Play the game.
+Play from [here](https://dioveath.itch.io/cozzle)
+
+## Concepts & Ideas
 ### Initial Design 
 The theme for 2022 was Duality. I decided to go with Unity this time. On the first day 
 I was exploring ideas and my initial idea was to create a puzzle platformer with 2 characters
